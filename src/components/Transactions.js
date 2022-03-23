@@ -66,6 +66,25 @@ const Transactions = () => {
             })
           }
         />
+        {transaction.type === "income" ? (
+          <select
+            name="tag"
+            onChange={() => setTransaction({ ...transaction, tag: "AS" })}
+          >
+            <option value="payment">Payment</option>
+            <option value="returns">Returns</option>
+          </select>
+        ) : (
+          <select name="tag">
+            <option value="food">Food</option>
+            <option value="drugstore">Drugstore</option>
+            <option value="alcohol">Alcohol</option>
+            <option value="clothes">Clothes</option>
+            <option value="bills">Bills</option>
+            <option value="home">Home</option>
+          </select>
+        )}
+
         <button type="submit">Add transaction</button>
       </form>
     </section>
