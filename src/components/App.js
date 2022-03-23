@@ -1,12 +1,11 @@
 import { useContext, useEffect } from "react";
-import { BalanceContext } from "../context/BalanceContext";
+import { TransactionsContext } from "../context/TransactionsContext";
 import "./App.css";
 import Header from "./Header";
 import History from "./History";
 import Transactions from "./Transactions";
 function App() {
-  const [balance, setBalance] = useContext(BalanceContext);
-  // console.log(balance);
+  const [transactions, setTransactions] = useContext(TransactionsContext);
   return (
     <div className="App">
       <Header />

@@ -1,0 +1,39 @@
+header {
+  .green {
+    color: green;
+  }
+
+  .red {
+    color: red;
+  }
+  text-align: center;
+  .balance {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    background-color: whitesmoke;
+    font-size: 1.4rem;
+    h5,
+    p {
+      margin: 0.8rem;
+    }
+
+    .income {
+      padding: 0 2rem;
+      border-right: 0.1rem solid black;
+      // background-color: green;
+      p {
+        color: green;
+      }
+    }
+
+    .expense {
+      padding: 0 2rem;
+      border-left: 0.1rem solid black;
+
+      p {
+        color: red;
+      }
+    }
+  }
+}
