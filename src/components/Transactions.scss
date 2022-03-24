@@ -29,6 +29,17 @@
       border: none;
       color: white;
       font-weight: bold;
+      border-radius: 0.6rem;
+    }
+    textarea {
+      border: none;
+      padding: 0.5rem 0.2rem;
+      margin-bottom: 0.8rem;
+    }
+    .notice-btn {
+      width: 40%;
+      margin: 1rem auto;
+      background-color: green;
     }
   }
 }

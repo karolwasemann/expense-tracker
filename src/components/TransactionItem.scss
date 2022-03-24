@@ -1,0 +1,19 @@
+.popup-content {
+  padding: 0.4rem 1rem;
+  width: 80vw !important;
+  left: 5vw !important;
+  right: 5vw !important;
+
+  p {
+    margin: 0.4rem 0;
+    font-size: 1.2rem;
+    i {
+      display: block;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+[data-popup="tooltip"].popup-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+}

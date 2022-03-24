@@ -6,6 +6,7 @@ import { v4 as uuid } from "uuid";
 const Transactions = () => {
   const [transactions, setTransactions] = useContext(TransactionsContext);
   const [transaction, setTransaction] = useState({});
+  const [notice, setNotice] = useState(false);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -69,13 +70,28 @@ const Transactions = () => {
         {transaction.type === "income" ? (
           <select
             name="tag"
-            onChange={() => setTransaction({ ...transaction, tag: "AS" })}
+            onChange={(e) =>
+              setTransaction({ ...transaction, tag: e.target.value })
+            }
+            required
           >
+            <option value="" selected>
+              Choose here
+            </option>
             <option value="payment">Payment</option>
             <option value="returns">Returns</option>
           </select>
         ) : (
-          <select name="tag">
+          <select
+            name="tag"
+            onChange={(e) =>
+              setTransaction({ ...transaction, tag: e.target.value })
+            }
+            required
+          >
+            <option value="" selected>
+              Choose here
+            </option>
             <option value="food">Food</option>
             <option value="drugstore">Drugstore</option>
             <option value="alcohol">Alcohol</option>
@@ -84,6 +100,26 @@ const Transactions = () => {
             <option value="home">Home</option>
           </select>
         )}
+
+        <button
+          className="notice-btn"
+          type="button"
+          onClick={() => setNotice((prevNotice) => !prevNotice)}
+        >
+          Add notice
+        </button>
+
+        {notice ? (
+          <textarea
+            name="notice"
+            id="notice"
+            cols="30"
+            rows="10"
+            onChange={(e) =>
+              setTransaction({ ...transaction, notice: e.target.value })
+            }
+          ></textarea>
+        ) : null}
 
         <button type="submit">Add transaction</button>
       </form>
