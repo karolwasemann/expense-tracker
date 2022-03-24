@@ -1,6 +1,6 @@
 body {
-  background-color: lightgray;
-  margin: 1rem;
+  background-color: lightgray !important;
+  margin: 1rem !important;
 }
 
 .App {

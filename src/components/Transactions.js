@@ -1,16 +1,24 @@
 import "./Transactions.scss";
+import { collection, addDoc } from "firebase/firestore";
+
 import { useContext, useState } from "react";
 import { TransactionsContext } from "../context/TransactionsContext";
-import { v4 as uuid } from "uuid";
+// import { v4 as uuid } from "uuid";
 
-const Transactions = () => {
+const Transactions = (props) => {
   const [transactions, setTransactions] = useContext(TransactionsContext);
   const [transaction, setTransaction] = useState({});
   const [notice, setNotice] = useState(false);
 
   const submitHandler = (e) => {
     e.preventDefault();
-    setTransactions([...transactions, transaction]);
+    // setTransactions([...transactions, transaction]);
+
+    const createTransactions = async () => {
+      await addDoc(props.transactionsCollectionRef, transaction);
+    };
+    createTransactions();
+    props.getTransactions();
     e.target.reset();
   };
   return (
@@ -63,7 +71,6 @@ const Transactions = () => {
             setTransaction({
               ...transaction,
               amount: e.target.value,
-              id: uuid(),
             })
           }
         />
@@ -89,9 +96,7 @@ const Transactions = () => {
             }
             required
           >
-            <option value="" selected>
-              Choose here
-            </option>
+            <option value="">Choose here</option>
             <option value="food">Food</option>
             <option value="drugstore">Drugstore</option>
             <option value="alcohol">Alcohol</option>

@@ -7,20 +7,33 @@
     text-align: left;
     margin: 1.4rem 0;
   }
-  .history-item {
-    font-size: 1.2rem;
+  .history-item-container {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    .history-item {
+      font-size: 1.2rem;
 
-    background-color: whitesmoke;
-    margin: 0.4rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem 0.6rem;
-  }
+      background-color: whitesmoke;
+      margin: 0.4rem 0 0.4rem;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0.6rem;
+    }
 
-  .income {
-    border-right: 0.4rem solid green;
-  }
-  .expense {
-    border-right: 0.4rem solid red;
+    button {
+      padding: 1rem;
+      border: none;
+      background: none;
+      color: red;
+      margin-left: 1rem;
+      cursor: pointer;
+    }
+
+    .income {
+      border-right: 0.4rem solid green;
+    }
+    .expense {
+      border-right: 0.4rem solid red;
+    }
   }
 }

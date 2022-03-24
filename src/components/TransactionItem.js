@@ -4,7 +4,7 @@ import "./TransactionItem.scss";
 
 const TransactionItem = (props) => {
   return (
-    <>
+    <div className="history-item-container">
       <Popup
         trigger={
           <div
@@ -37,7 +37,9 @@ const TransactionItem = (props) => {
           </p>
         </div>
       </Popup>
-    </>
+
+      <button onClick={() => props.deleteTransaction(props.item.id)}>❌</button>
+    </div>
   );
 };
 
