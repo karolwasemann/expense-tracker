@@ -33,7 +33,7 @@ export default function Signup() {
 
   return (
     <>
-      <Card>
+      <Card style={{ color: "black" }}>
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
           {error && <Alert variant="danger">{error}</Alert>}
@@ -50,7 +50,7 @@ export default function Signup() {
               <Form.Label>Password Confirmation</Form.Label>
               <Form.Control type="password" ref={passwordConfirmRef} required />
             </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
+            <Button disabled={loading} className="w-100 mt-2" type="submit">
               Sign Up
             </Button>
           </Form>

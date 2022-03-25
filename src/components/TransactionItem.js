@@ -10,7 +10,7 @@ const TransactionItem = (props) => {
           <div
             className={
               props.item.type === "income"
-                ? "history-item income    form-control"
+                ? "history-item income  form-control"
                 : "history-item expense  form-control"
             }
           >
