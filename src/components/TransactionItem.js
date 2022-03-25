@@ -10,8 +10,8 @@ const TransactionItem = (props) => {
           <div
             className={
               props.item.type === "income"
-                ? "history-item income"
-                : "history-item expense"
+                ? "history-item income    form-control"
+                : "history-item expense  form-control"
             }
           >
             <span>{props.item.name}</span>

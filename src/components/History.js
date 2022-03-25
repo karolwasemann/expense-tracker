@@ -2,16 +2,21 @@ import "./History.scss";
 import { useContext, useState } from "react";
 import { TransactionsContext } from "../context/TransactionsContext";
 import TransactionItem from "./TransactionItem";
-import { db } from "./firebase-config";
+import { db } from "../firebase";
 import { deleteDoc, doc } from "firebase/firestore";
+import { useAuth } from "../context/AuthContext";
 
 const History = (props) => {
+  const { currentUser } = useAuth();
   const [transactions, setTransactions] = useContext(TransactionsContext);
-  console.log(transactions);
 
   const deleteTransaction = async (id) => {
     console.log("ID:", id);
-    const transactionDoc = doc(db, "transactions", id);
+    const transactionDoc = doc(
+      db,
+      `${currentUser === null ? null : currentUser.email}`,
+      id
+    );
     await deleteDoc(transactionDoc);
     props.getTransactions();
   };

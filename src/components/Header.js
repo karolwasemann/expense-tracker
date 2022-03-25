@@ -26,7 +26,7 @@ const Header = () => {
         Your Balance:{" "}
         <strong className={balance > 0 ? "green" : "red"}>{balance}</strong>
       </h2>
-      <section className="balance">
+      <section className="balance form-control">
         <div className="income">
           <h5>Income</h5>
           <p>{income}</p>

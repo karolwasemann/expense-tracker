@@ -1,6 +1,12 @@
 body {
-  background-color: lightgray !important;
+  background-color: #2e2e2e !important;
   margin: 1rem !important;
+  color: #fafafa !important;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  color: #00b0ff !important;
 }
 
 .App {

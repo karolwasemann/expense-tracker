@@ -53,6 +53,7 @@ const Transactions = (props) => {
 
         <label htmlFor="text">Text: </label>
         <input
+          className="form-control"
           required
           type="text"
           name="text"
@@ -63,6 +64,7 @@ const Transactions = (props) => {
 
         <label htmlFor="amount">Amount: </label>
         <input
+          className="form-control"
           required
           type="number"
           step="0.01"
@@ -76,6 +78,7 @@ const Transactions = (props) => {
         />
         {transaction.type === "income" ? (
           <select
+            className="form-select"
             name="tag"
             onChange={(e) =>
               setTransaction({ ...transaction, tag: e.target.value })

@@ -13,7 +13,7 @@
     .history-item {
       font-size: 1.2rem;
 
-      background-color: whitesmoke;
+      background-color: #fafafa;
       margin: 0.4rem 0 0.4rem;
       display: flex;
       justify-content: space-between;
@@ -24,16 +24,14 @@
       padding: 1rem;
       border: none;
       background: none;
-      color: red;
-      margin-left: 1rem;
       cursor: pointer;
     }
 
     .income {
-      border-right: 0.4rem solid green;
+      border-right: 0.4rem solid #2e7d32;
     }
     .expense {
-      border-right: 0.4rem solid red;
+      border-right: 0.4rem solid #b71c1c;
     }
   }
 }

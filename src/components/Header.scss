@@ -1,20 +1,22 @@
 header {
   .green {
-    color: green;
+    color: #43a047;
   }
 
   .red {
-    color: red;
+    color: #f44336;
   }
   text-align: center;
   .balance {
     display: flex;
     justify-content: center;
     margin-bottom: 2rem;
-    background-color: whitesmoke;
+    background-color: #fafafa;
     font-size: 1.4rem;
     h5,
     p {
+      color: #2e2e2e;
+
       margin: 0.8rem;
     }
 
