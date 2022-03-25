@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { TransactionsContext } from "../context/TransactionsContext";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 // import Login from "./Login";
 import Main from "./Main";
 import Signup from "./Signup";
@@ -32,15 +32,16 @@ function App() {
     console.log("seted transaction");
   };
   return (
-    <div className="App">
-      <Container
-        className="d-flex aligin-items-center justify-content-center"
-        style={{ minHeight: "100vh" }}
-      >
-        <div className="w-100" style={{ maxWidth: "400px" }}>
-          <BrowserRouter>
+    <HashRouter basename="/expense-tracker">
+      <div className="App">
+        <Container
+          className="d-flex aligin-items-center justify-content-center"
+          style={{ minHeight: "100vh" }}
+        >
+          <div className="w-100" style={{ maxWidth: "400px" }}>
             <Routes>
               <Route
+                exact
                 path="/"
                 element={
                   <Main
@@ -56,10 +57,10 @@ function App() {
               />
               <Route path="/forgot-password" element={<ForgotPassword />} />
             </Routes>
-          </BrowserRouter>
-        </div>
-      </Container>
-    </div>
+          </div>
+        </Container>
+      </div>
+    </HashRouter>
   );
 }
 
